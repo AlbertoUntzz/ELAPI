@@ -23,27 +23,26 @@ router.post('/', (req,res) => {
     res.send('received');
 });
 
-router.put('/:id', (req,res) => {
+router.put('/:id', (req, res) => {
     const { id } = req.params;
-    const {Marca, Modelo, Tallas, Color, Precio } = req.body;
-    if(Marca && Modelo && Tallas && Color && Precio){
-        _.each(shoes, (shoe,i) => {
-            if(shoe.id == id) {
-               shoes.Marca = Marca;
-               shoes.Modelo= Modelo;
-               shoes.Tallas = Tallas;
-               shoes.Color = Color;
-               shoes.Precio = Precio;
+    const { Marca, Modelo, Tallas, Color, Precio } = req.body;
+
+    if (Marca && Modelo && Tallas && Color && Precio) {
+        _.each(shoes, (shoe, i) => {
+            if (shoe.id == id) {
+                shoes[i].Marca = Marca;
+                shoes[i].Modelo = Modelo;
+                shoes[i].Tallas = Tallas;
+                shoes[i].Color = Color;
+                shoes[i].Precio = Precio;
             }
         });
         res.json(shoes);
-    }else {
-        res.send('wrong Request')
+    } else {
+        res.send('wrong Request');
     }
-        
-            
-        
 });
+
 
 
 
