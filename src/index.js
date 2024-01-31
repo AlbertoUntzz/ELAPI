@@ -13,6 +13,8 @@ app.use(express.json())
 
 //routes
 app.use(require('./routes/rutas.js'));
+app.use('/api/shoes',require('./routes/shoes.js'));
+
 
 // iniciando el servidor
 app.listen(3000, () => {
