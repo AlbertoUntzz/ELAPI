@@ -37,9 +37,12 @@ router.put('/:id', (req,res) => {
             }
         });
         res.json(shoes);
-    }else{
-            res.send('wrong Request')
+    }else {
+        res.send('wrong Request')
     }
+        
+            
+        
 });
 
 
